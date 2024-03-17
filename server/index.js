@@ -1,5 +1,6 @@
 const express=require("express");
 const cors=require("cors");
+const database=require("./config/database");
 //importing the routers
 const userRouter=require("./routes/User");
 const profileRouter=require("./routes/Profile");
@@ -8,9 +9,10 @@ const coursesRouter=require("./routes/Courses");
 const contactRouter=require("./routes/Contact");
 
 const app=express();
-
+database.connect();
 app.use(cors());
 app.use(express.json());
+
 
 
 
